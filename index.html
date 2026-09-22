@@ -1,1173 +1,288 @@
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
-
   <meta charset="UTF-8" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>iT Facilities Service</title>
-
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
-    rel="stylesheet"
-  />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Kanit&display=swap"
-    rel="stylesheet"
-  />
-
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet" />
   <style>
-
-    body {
-      background-color: #3399CC;
-      font-family: 'Kanit', sans-serif;
-    }
-
-    label {
-      color: white;
-    }
-
-    .container {
-      max-width: 600px;
-    }
-
+    body { background-color: #3399CC; font-family: 'Kanit', sans-serif; }
+    label { color: white; }
+    .container { max-width: 600px; }
   </style>
-
 </head>
-
-
 <body>
-
-
   <div class="text-center mt-4">
-
-    <img
-      src="https://raw.githubusercontent.com/ITFline/imagesITline/main/IM/ITF-Service.png"
-      width="416"
-    />
-
+    <img src="https://raw.githubusercontent.com/ITFline/imagesITline/main/IM/ITF-Service.png" width="416" />
   </div>
-
-
 
   <div class="container mt-4">
-
-
-    <form
-      id="myForm"
-      class="needs-validation"
-      novalidate
-    >
-
-
+    <form id="myForm" class="needs-validation" novalidate>
       <div class="text-center mb-3">
-
-        <h3 class="text-light">
-          ขอรับบริการ iT Facilities Service
-        </h3>
-
+        <h3 class="text-light">ขอรับบริการ iT Facilities Service</h3>
       </div>
-
-
-
-      <!-- ========================= -->
-      <!-- ชื่อ -->
-      <!-- ========================= -->
-
       <div class="mb-3">
-
-        <label for="name">
-          ชื่อ (ผู้ติดต่อ)
-        </label>
-
-        <input
-          type="text"
-          id="name"
-          class="form-control"
-          required
-          pattern="^(?=(?:.*[A-Za-zก-๙]){2,}).+"
-        />
-
-        <div class="invalid-feedback">
-          กรุณากรอกชื่อ-สกุล
-        </div>
-
+        <label for="name">ชื่อ (ผู้ติดต่อ)</label>
+         <input type="text" id="name" class="form-control" required  pattern="^(?=(?:.*[A-Za-zก-๙]){2,}).+"/>
+        <div class="invalid-feedback"> กรุณากรอกชื่อ-สกุล</div>
       </div>
-
-
-
-      <!-- ========================= -->
-      <!-- เบอร์ติดต่อ -->
-      <!-- ========================= -->
-
       <div class="mb-3">
-
-        <label for="phone">
-          เบอร์ติดต่อ (ที่สามารถติดต่อได้)
-        </label>
-
-        <input
-          type="text"
-          id="phone"
-          class="form-control"
-          required
-          pattern="^[0-9]{4,10}$"
-        />
-
-        <div class="invalid-feedback">
-          กรุณากรอกเบอร์
-        </div>
-
+        <label for="phone">เบอร์ติดต่อ (ที่สามารถติดต่อได้)</label>
+       <input type="text" id="phone" class="form-control" required  pattern="^[0-9]{4,10}$"/>
+        <div class="invalid-feedback">กรุณากรอกเบอร์</div>
       </div>
-
-
-
-      <!-- ========================= -->
-      <!-- อุปกรณ์ -->
-      <!-- ========================= -->
-
       <div class="mb-3">
-
-        <label for="device">
-          *อุปกรณ์ที่ขอรับริการ*
-        </label>
-
-
-        <select
-          id="device"
-          class="form-select"
-          required
-        >
-
-          <option value="">
-            -- กรุณาเลือก --
-          </option>
-
+        <label for="device">*อุปกรณ์ที่ขอรับริการ*</label>
+        <select id="device" class="form-select" required>
+          <option value="">-- กรุณาเลือก --</option>
           <option>Computer PC</option>
-
           <option>Notebook</option>
-
           <option>MacBook</option>
-
           <option>Macintosh</option>
-
         </select>
-
-
-        <div class="invalid-feedback">
-          กรุณาเลือกอุปกรณ์
-        </div>
-
+        <div class="invalid-feedback">กรุณาเลือกอุปกรณ์</div>
       </div>
-
-
-
-      <!-- ========================= -->
-      <!-- ปัญหา -->
-      <!-- ========================= -->
-
       <div class="mb-3">
-
-        <label for="problem">
-          *แจ้งขอรับบริการ*
-        </label>
-
-
-        <select
-          id="problem"
-          class="form-select"
-          required
-        >
-
-
-          <option value="">
-            -- กรุณาเลือก --
-          </option>
-
-
-          <option>
-            ขอติดตั้งโปรแกรม(กรณีพนักงานใหม่)
-          </option>
-
-          <option>
-            ขอติดตั้งโปรแกรม(กรณีเปลี่ยนเครื่อง)
-          </option>
-
-          <option>
-            ขอติดตั้งWindowsใหม่
-          </option>
-
-          <option>
-            ขอติดตั้งRemote Desktop
-          </option>
-
-          <option>
-            ขอติดตั้งไดร์กลางของแผนก
-          </option>
-
-          <option>
-            ขอติดตั้งโปรแกรม ITEC
-          </option>
-
-          <option>
-            ขอติดตั้งโปรแกรม DATALOAD
-          </option>
-
-          <option>
-            ขอติดตั้งโปรแกรม Oracle APS
-          </option>
-
-          <option>
-            ขอติดตั้งโปรแกรม HRMI8
-          </option>
-
-          <option>
-            ขอติดตั้งโปรแกรม ESS
-          </option>
-
-          <option>
-            ขอติดตั้งโปรแกรม LS
-          </option>
-
-          <option>
-            ขอติดตั้งโปรแกรม Microsoft Office
-          </option>
-
-          <option>
-            ขอติดตั้ง Printerใหม่
-          </option>
-
-          <option>
-            ขอติดตั้งโปรแกรม 3CX Phone
-          </option>
-
-          <option>
-            ขอติดตั้ง VPN ใหม่
-          </option>
-
-          <option>
-            ขอสิทธิ์จองห้องประชุม
-          </option>
-
-          <option>
-            ขอ Add Group Mail
-          </option>
-
-          <option>
-            เพิ่มสิทธิ์ Group Mail ให้พนักงานใหม่
-          </option>
-
-          <option>
-            เพิ่มสิทธิ์ Group Mail ให้พนักงานเก่า
-          </option>
-
-          <option>
-            โปรแกรม HRMI8/ESS ไม่สามารถใช้งานได้
-          </option>
-
-          <option>
-            โปรแกรม Oracle APS ไม่สามารถใช้ได้
-          </option>
-
-          <option>
-            โปรแกรม COM7PRO ไม่สามารถใช้งานได้
-          </option>
-
-          <option>
-            Internet / WiFi ไม่สามารถใช้งานได้
-          </option>
-
-          <option>
-            จำรหัส WiFi ไม่ได้
-          </option>
-
-          <option>
-            LAN ไม่สามารถใช้งานได้
-          </option>
-
-          <option>
-            VPN ใช้งานไม่ได้
-          </option>
-
-          <option>
-            WiFi ไม่เสถียร
-          </option>
-
-          <option>
-            โปรแกรม Error
-          </option>
-
-          <option>
-            VPN ใช้งานไม่ได้
-          </option>
-
-          <option>
-            WiFi เชื่อมต่อไม่ได้
-          </option>
-
-
+        <label for="problem">*แจ้งขอรับบริการ*</label>
+        <select id="problem" class="form-select" required>
+          <option value="">-- กรุณาเลือก --</option>
+          <option>ขอติดตั้งโปรแกรม(กรณีพนักงานใหม่)</option>
+           <option>ขอติดตั้งโปรแกรม(กรณีเปลี่ยนเครื่อง)</option>
+          <option>ขอติดตั้งWindowsใหม่</option>
+          <option>ขอติดตั้งRemote Desktop</option>
+           <option>ขอติดตั้งไดร์กลางของแผนก</option>
+          <option>ขอติดตั้งโปรแกรม ITEC</option>
+          <option>ขอติดตั้งโปรแกรม DATALOAD</option>
+            <option>ขอติดตั้งโปรแกรม Oracle APS</option>
+          <option>ขอติดตั้งโปรแกรม HRMI8</option>
+          <option>ขอติดตั้งโปรแกรม ESS</option>
+           <option>ขอติดตั้งโปรแกรม LS</option>
+          <option>ขอติดตั้งโปรแกรม Microsoft Office</option>
+          <option>ขอติดตั้ง Printerใหม่</option>
+            <option>ขอติดตั้งโปรแกรม 3CX Phone</option>
+          <option>ขอติดตั้ง VPN ใหม่</option>
+          <option>ขอสิทธิ์จองห้องประชุม</option>
+           <option>ขอ Add Group Mail</option>
+          <option>เพิ่มสิทธิ์ Group Mail ให้พนักงานใหม่</option>
+          <option>เพิ่มสิทธิ์ Group Mail ให้พนักงานเก่า</option>
+            <option>โปรแกรม HRMI8/ESS ไม่สามารถใช้งานได้</option>
+          <option>โปรแกรม Oracle APS ไม่สามารถใช้ได้</option>
+          <option>โปรแกรม COM7PRO ไม่สามารถใช้งานได้</option>
+           <option>Internet / WiFi ไม่สามารถใช้งานได้</option>
+          <option>จำรหัส WiFi ไม่ได้</option>
+          <option>LAN ไม่สามารถใช้งานได้</option>
+          <option>VPN ใช้งานไม่ได้</option>
+          <option>WiFi ไม่เสถียร</option>
+          <option>โปรแกรม Error</option>
+           <option>VPN ใช้งานไม่ได้</option>
+          <option> WiFi เชื่อมต่อไม่ได้</option>
+      
         </select>
-
-
-        <div class="invalid-feedback">
-          กรุณาเลือกขอรับบริการ
-        </div>
-
+        <div class="invalid-feedback">กรุณาเลือกขอรับบริการ</div>
       </div>
-
-
-
-      <!-- ========================= -->
-      <!-- แผนก -->
-      <!-- ========================= -->
-
       <div class="mb-3">
-
-        <label for="place">
-          *แผนก*🔎
-        </label>
-
-
-        <select
-          id="place"
-          class="form-select"
-          required
-        >
-
-
-          <option value="">
-            -- กรุณาเลือก --
-          </option>
-
+        <label for="place">*แผนก*🔎</label>
+        <select id="place" class="form-select" required>
+          <option value="">-- กรุณาเลือก --</option>
           <option>GI</option>
-
           <option>EV7</option>
-
           <option>Adept</option>
-
           <option>Account</option>
-
           <option>Banana Franchise</option>
-
-          <option>Business Development</option>
-
+            <option>Business Development</option>
           <option>Call Center</option>
-
           <option>Double 7</option>
-
-          <option> Dr.Pharma</option>
-
+            <option> Dr.Pharma</option>
           <option>E-Commerce</option>
-
           <option>Education and Enterprise</option>
-
-          <option>Executive Office</option>
-
+            <option>Executive Office</option>
           <option>Event</option>
-
           <option>Finance</option>
-
-          <option>General Affairs</option>
-
+            <option>General Affairs</option>
           <option>HQ Staff Coach</option>
-
           <option>HRD</option>
-
-          <option>Human Resources Management</option>
-
+            <option>Human Resources Management</option>
           <option>iCare Operation</option>
-
           <option>IT Facilities</option>
-
-          <option>Internal Audit</option>
-
+            <option>Internal Audit</option>
           <option>InterVision</option>
-
           <option>Innovation Development</option>
-
-          <option>Legal Office</option>
-
+            <option>Legal Office</option>
           <option>Marketing</option>
-
           <option>Marketing Communication Banana</option>
-
-          <option>Merchandising Support</option>
-
+            <option>Merchandising Support</option>
           <option>Management Information System</option>
-
           <option>MIS Fin Tech</option>
-
-          <option>NON IT</option>
-
+            <option>NON IT</option>
           <option>Operation Expense Administrative</option>
-
           <option>Operation Standard</option>
-
-          <option>Online Fulfillment</option>
-
+            <option>Online Fulfillment</option>
           <option>Operation Apple</option>
-
           <option>Operation Admin</option>
-
-          <option>Operation Data Support</option>
-
+            <option>Operation Data Support</option>
           <option>Online Marketing</option>
-
           <option>product managerment</option>
-
-          <option>Retail Buyer</option>
-
+            <option>Retail Buyer</option>
           <option>Retail Merchandiser</option>
-
           <option>Service Center</option>
-
-          <option>Service Management</option>
-
+            <option>Service Management</option>
           <option>Sales & Service Management</option>
-
           <option>Sales & Retial Business Development</option>
-
-          <option>Store Checker</option>
-
+            <option>Store Checker</option>
           <option>SweeKnowHow</option>
-
           <option>Talent Acquisition</option>
-
-          <option>True Operation</option>
-
-          <option>Thunderfinfin</option>
-
+            <option>True Operation</option>
+            <option>Thunderfinfin</option>
           <option>Warehouse</option>
-
           <option>4Paws</option>
-
-          <option>GI</option>
-
-          <option>TT</option>
-
-
+            <option>GI</option>          
         </select>
-
-
-        <div class="invalid-feedback">
-          กรุณาเลือกแจ้งขอรับบริการ
-        </div>
-
+        <div class="invalid-feedback">กรุณาเลือกแจ้งขอรับบริการ</div>
       </div>
-
-
-
-      <!-- ========================= -->
-      <!-- ปุ่มแจ้ง CASE -->
-      <!-- เพิ่ม id="submitBtn" -->
-      <!-- ========================= -->
-
       <div class="text-center">
-
-        <button
-          type="submit"
-          id="submitBtn"
-          class="btn btn-warning w-100"
-        >
-
-          <i class="bi bi-send-fill"></i>
-          แจ้งCASE
-
+        <button type="submit" class="btn btn-warning w-100">
+          <i class="bi bi-send-fill"></i> แจ้งCASE
         </button>
-
       </div>
-
-
     </form>
-
   </div>
 
-
-
-  <!-- ================================================= -->
-  <!-- JavaScript Libraries -->
-  <!-- ================================================= -->
-
+  <!-- JS Libraries -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
   <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
-
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 
-
-
   <script>
-
-
-    // ==================================================
-    // Apps Script URL เดิม
-    // ==================================================
-
-    const scriptUrl =
-      'https://script.google.com/macros/s/AKfycbznmXbIa8AaZ2WpUO5f-sDu4PHrlSCc9bDkrPCJGAf4m-V5CHZKOREGgwf4YPc1-tHO/exec';
-
-
-
-    // ==================================================
-    // ตัวแปรป้องกันการกดส่งซ้ำ
-    // ==================================================
-
-    let isSubmitting = false;
-
-
-
-    // ==================================================
-    // LIFF
-    // ==================================================
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbznmXbIa8AaZ2WpUO5f-sDu4PHrlSCc9bDkrPCJGAf4m-V5CHZKOREGgwf4YPc1-tHO/exec';
 
     $(document).ready(() => {
-
-
-      liff.init({
-
-        liffId: '1657930419-DwlKBdor',
-
-        withLoginOnExternalBrowser: true
-
-      })
-
-      .then(() => {
-
-        console.log('LIFF Initialized');
-
-      })
-
-      .catch(err => {
-
-        Swal.fire({
-
-          icon: 'error',
-
-          title: 'LIFF error',
-
-          text: err.message
-
-        });
-
-      });
-
-
+      liff.init({ liffId: '1657930419-DwlKBdor', withLoginOnExternalBrowser: true })
+        .then(() => console.log('LIFF Initialized'))
+        .catch(err => Swal.fire({ icon: 'error', title: 'LIFF error', text: err.message }));
     });
 
-
-
-    // ==================================================
-    // SUBMIT FORM
-    // ==================================================
-
     function submitForm() {
-
-
-      // ================================================
-      // สำคัญ
-      // ถ้ากำลังส่งข้อมูลอยู่
-      // ไม่อนุญาตให้ส่งซ้ำ
-      // ================================================
-
-      if (isSubmitting) {
-
-        console.log('กำลังส่งข้อมูลอยู่ ไม่อนุญาตให้ส่งซ้ำ');
-
-        return;
-
-      }
-
-
-
-      // ================================================
-      // ล็อกสถานะทันที
-      // ================================================
-
-      isSubmitting = true;
-
-
-
-      const submitBtn =
-        document.getElementById('submitBtn');
-
-
-
-      // ================================================
-      // ปิดปุ่ม
-      // ================================================
-
-      submitBtn.disabled = true;
-
-
-      submitBtn.innerHTML =
-        '<span class="spinner-border spinner-border-sm me-2"></span>กำลังส่ง...';
-
-
-
       $.LoadingOverlay('show');
 
-
-
-      // ================================================
-      // LINE USER ID
-      // ================================================
-
-      const uid =
-        liff.getDecodedIDToken()?.sub || '';
-
-
-
-      // ================================================
-      // ไม่พบ UID
-      // ================================================
-
+      const uid = liff.getDecodedIDToken()?.sub || '';
       if (!uid) {
-
-
         $.LoadingOverlay('hide');
-
-
-        // เปิดปุ่มกลับ
-        isSubmitting = false;
-
-
-        submitBtn.disabled = false;
-
-
-        submitBtn.innerHTML =
-          '<i class="bi bi-send-fill"></i> แจ้งCASE';
-
-
-
-        Swal.fire({
-
-          icon: 'error',
-
-          title: 'ไม่พบ LINE User ID'
-
-        });
-
-
+        Swal.fire({ icon: 'error', title: 'ไม่พบ LINE User ID' });
         return;
-
       }
 
-
-
-      // ================================================
-      // เตรียมข้อมูล
-      // ================================================
-
       const data = {
-
-
         opt: 'savedata',
-
-
         uid: uid,
-
-
-        name:
-          $('#name')
-            .val()
-            .trim(),
-
-
-        phone:
-          $('#phone')
-            .val()
-            .trim(),
-
-
-        device:
-          $('#device')
-            .val(),
-
-
-        problem:
-          $('#problem')
-            .val(),
-
-
-        place:
-          $('#place')
-            .val()
-
-
+        name: $('#name').val(),
+        phone: $('#phone').val(),
+        device: $('#device').val(),
+        problem: $('#problem').val(),
+        place: $('#place').val()
       };
 
-
-
-      // ================================================
-      // ส่งข้อมูลไป Apps Script
-      // ================================================
-
       $.ajax({
-
-
         method: 'POST',
-
-
         url: scriptUrl,
-
-
         data: data,
-
-
         dataType: 'json',
-
-
-
-        // ==============================================
-        // SUCCESS
-        // ==============================================
-
         success: function (res) {
-
-
           $.LoadingOverlay('hide');
-
-
-
           if (res.status === 'success') {
-
-
-            // ==========================================
-            // สำเร็จ
-            //
-            // *** ไม่เปิดปุ่มกลับ ***
-            //
-            // เพื่อป้องกันการส่ง CASE ซ้ำ
-            // ==========================================
-
-
-            Swal.fire({
-
-
-              icon: 'success',
-
-
-              title:
-                'แจ้งขอบริการเรียบร้อย'
-
-
-            }).then(() => {
-
-
-
-              // ========================================
-              // FLEX MESSAGE
-              // ========================================
-
+            Swal.fire({ icon: 'success', title: 'แจ้งขอบริการเรียบร้อย' }).then(() => {
               const flex = {
-
-
                 type: 'flex',
-
-
-                altText:
-                  'แจ้งขอบริการเรียบร้อย',
-
-
-
+                altText: 'แจ้งขอบริการเรียบร้อย',
                 contents: {
-
-
                   type: 'bubble',
-
-
-
                   body: {
-
-
                     type: 'box',
-
-
                     layout: 'vertical',
-
-
                     spacing: 'md',
-
-
-
                     contents: [
-
-
                       {
-
-
                         type: 'text',
-
-
-                        text:
-                          '👨‍💻ขอรับบริการเรียบร้อย👩‍💻',
-
-
+                        text: '👨‍💻ขอรับบริการเรียบร้อย👩‍💻',
                         weight: 'bold',
-
-
                         size: 'xl',
-
-
                         align: 'center'
-
-
                       },
-
-
+                      { type: 'separator', margin: 'md' },
                       {
-
-
-                        type: 'separator',
-
-
-                        margin: 'md'
-
-
-                      },
-
-
-                      {
-
-
                         type: 'text',
-
-
-                        text:
-                          '🚨เลขCase: ' + res.id,
-
-
+                        text: '🚨เลขCase: ' + res.id,
                         weight: 'bold',
-
-
                         size: 'xl'
-
-
+                      
                       },
-
-
                       {
-
-
                         type: 'text',
-
-
-                        text:
-                          'อุปกรณ์ที่ขอรับบริการ: '
-                          + data.device,
-
-
-                        size: 'sm',
-
-
+                        text: 'อุปกรณ์ที่ขอรับริการ: ' + data.device,
+                        size: 'sm',                      
                         wrap: true
-
-
+                       
                       },
-
-
                       {
-
-
                         type: 'text',
-
-
-                        text:
-                          'ขอรับบริการเรื่อง: '
-                          + data.problem,
-
-
-                        size: 'sm',
-
-
+                        text: 'ขอรับบริการเรื่อง: ' + data.problem,
+                        size: 'sm',                      
                         wrap: true
-
-
                       }
-
-
                     ]
-
-
                   }
-
-
                 }
-
-
               };
-
-
-
-              // ========================================
-              // ส่งข้อความกลับเข้า LINE
-              // ========================================
-
               liff.sendMessages([
-
-
                 {
-
-
                   type: 'text',
-
-
-                  text:
-                    `หมายเลขCase\n ${res.id}`
-
-
+                  text: `หมายเลขCase\n ${res.id}`
                 },
-
-
                 flex
-
-
-              ])
-
-
-              .then(() => {
-
-
-                // ส่ง LINE สำเร็จ
-                liff.closeWindow();
-
-
-              })
-
-
-              .catch(err => {
-
-
-                console.error(
-                  'LINE sendMessages error:',
-                  err
-                );
-
-
-                // ข้อมูลถูกบันทึกเรียบร้อยแล้ว
-                // ไม่เปิดปุ่มให้กดซ้ำ
-                // ปิดหน้าต่างแทน
-
-                liff.closeWindow();
-
-
-              });
-
-
+              ]).then(() => liff.closeWindow());
             });
-
-
-
           } else {
-
-
-            // ==========================================
-            // Server ตอบ Error
-            //
-            // กรณีนี้ยังไม่ได้สำเร็จ
-            // จึงเปิดปุ่มให้ลองใหม่
-            // ==========================================
-
-
-            isSubmitting = false;
-
-
-            submitBtn.disabled = false;
-
-
-            submitBtn.innerHTML =
-              '<i class="bi bi-send-fill"></i> แจ้งCASE';
-
-
-
-            Swal.fire({
-
-
-              icon: 'error',
-
-
-              title:
-                'บันทึกข้อมูลล้มเหลว',
-
-
-              text:
-                res.message ||
-                'กรุณาลองใหม่อีกครั้ง'
-
-
-            });
-
-
+            Swal.fire({ icon: 'error', title: 'บันทึกข้อมูลล้มเหลว' });
           }
-
-
         },
-
-
-
-        // ==============================================
-        // AJAX ERROR
-        // ==============================================
-
         error: function (err) {
-
-
           console.error(err);
-
-
           $.LoadingOverlay('hide');
-
-
-
-          // ============================================
-          // เชื่อมต่อไม่สำเร็จ
-          // เปิดปุ่มกลับให้ผู้ใช้ลองใหม่
-          // ============================================
-
-          isSubmitting = false;
-
-
-          submitBtn.disabled = false;
-
-
-          submitBtn.innerHTML =
-            '<i class="bi bi-send-fill"></i> แจ้งCASE';
-
-
-
-          Swal.fire({
-
-
-            icon: 'error',
-
-
-            title:
-              'ไม่สามารถเชื่อมต่อได้',
-
-
-            text:
-              'กรุณาลองใหม่อีกครั้ง'
-
-
-          });
-
-
+          Swal.fire({ icon: 'error', title: 'ไม่สามารถเชื่อมต่อได้' });
         }
-
-
       });
-
-
     }
 
-
-
-    // ==================================================
-    // FORM VALIDATION
-    // ==================================================
-
     (() => {
-
-
-      const form =
-        document.querySelector('#myForm');
-
-
-
-      form.addEventListener(
-
-
-        'submit',
-
-
-        event => {
-
-
-          // ป้องกัน Form submit แบบปกติ
-          event.preventDefault();
-
-
-
-          // ============================================
-          // ถ้ากำลัง Submit อยู่
-          // ไม่ทำอะไรอีก
-          // ============================================
-
-          if (isSubmitting) {
-
-            return;
-
-          }
-
-
-
-          // ============================================
-          // ตรวจ Validation
-          // ============================================
-
-          if (!form.checkValidity()) {
-
-
-            form.classList.add(
-              'was-validated'
-            );
-
-
-          } else {
-
-
-            // ส่งข้อมูล
-            submitForm();
-
-
-          }
-
-
-        },
-
-
-        false
-
-
-      );
-
-
+      const form = document.querySelector('#myForm');
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        if (!form.checkValidity()) {
+          form.classList.add('was-validated');
+        } else {
+          submitForm();
+        }
+      }, false);
     })();
-
-
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
+</body>
 
 
+<html>
 
-  <!-- ================================================= -->
-  <!-- รูปด้านล่างตามของเดิม -->
-  <!-- ================================================= -->
-
-  <div align="center" class="mt-4 mb-4">
-
-    <img
-      border="0"
-      src="https://raw.githubusercontent.com/ITFline/imagesITline/main/IM/IM1R.png"
-      alt="coala"
-      width="350"
-      height="195"
-    />
-
-  </div>
-
+<body>
+  <div align="center">
+    <img border="0" src="https://raw.githubusercontent.com/ITFline/imagesITline/main/IM/IM1R.png" alt="coala" width="350" height="195">
 
 </body>
 
